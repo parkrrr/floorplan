@@ -46,6 +46,19 @@ export default function App() {
   const [selectedWallId, setSelectedWallId] = useState(null);
   const [error, setError] = useState(null);
 
+  const handleNewCanvas = useCallback(() => {
+    const emptyFloorPlan = {
+      floors: [{ bounds: { xMin: 0, xMax: 20, yMin: 0, yMax: 15 }, rooms: [], walls: [] }],
+    };
+    setFloorPlan(emptyFloorPlan);
+    history.reset({ walls: [], furniture: [] });
+    setSelectedId(null);
+    setSelectedWallChild(null);
+    setTool('select');
+    setPendingTemplate(null);
+    setError(null);
+  }, [history.reset]);
+
   const handleImport = useCallback(() => {
     const input = document.createElement('input');
     input.type = 'file';
@@ -417,8 +430,11 @@ export default function App() {
             <div className="empty-state">
               <div className="empty-icon">⬜</div>
               <h2>No floor plan loaded</h2>
-              <p>Import a JSON floor plan file to get started.</p>
-              <button className="empty-import-btn" onClick={handleImport}>
+              <p>Start with an empty canvas or import an existing floor plan.</p>
+              <button className="empty-import-btn" onClick={handleNewCanvas}>
+                New Empty Canvas
+              </button>
+              <button className="empty-secondary-btn" onClick={handleImport}>
                 Import JSON
               </button>
               {error && <div className="empty-error">{error}</div>}

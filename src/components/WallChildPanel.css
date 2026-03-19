@@ -1,0 +1,99 @@
+.wcp-panel {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wcp-empty {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+.wcp-empty p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.wcp-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-section);
+}
+
+.wcp-info {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wcp-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.wcp-info-row strong {
+  color: var(--color-text-strong);
+  font-weight: 600;
+}
+
+.wcp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wcp-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.wcp-swing-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.wcp-swing-btn {
+  flex: 1;
+  padding: 6px 4px;
+  border: 1px solid var(--border-panel-btn);
+  border-radius: 5px;
+  background: var(--bg-panel-btn);
+  color: var(--color-panel-btn);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+.wcp-swing-btn:hover {
+  background: var(--bg-panel-btn-hover);
+  border-color: var(--border-panel-btn-hover);
+}
+
+.wcp-swing-btn.active {
+  background: #2196F3;
+  border-color: #1976D2;
+  color: white;
+  font-weight: 600;
+}
+
+.wcp-swing-hint {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}

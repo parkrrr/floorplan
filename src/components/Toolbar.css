@@ -1,0 +1,147 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: 44px;
+  background: var(--bg-toolbar);
+  border-bottom: 1px solid var(--border-toolbar);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbar-left {
+  flex: 0 0 auto;
+}
+
+.toolbar-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.toolbar-right {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.toolbar-brand {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-toolbar-brand);
+  background: none;
+  border: none;
+  cursor: default;
+  padding: 0 8px 0 0;
+  letter-spacing: 0.03em;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-toolbar-group);
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.toolbar-btn {
+  padding: 4px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: var(--bg-toolbar-btn);
+  color: var(--color-toolbar-text);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+  background: var(--bg-toolbar-btn-hover);
+  border-color: #777;
+}
+
+.toolbar-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.toolbar-btn.primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent-hover);
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar-btn.primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.toolbar-btn.icon {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-toolbar-secondary);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.toolbar-btn.icon:hover:not(:disabled) {
+  background: var(--bg-toolbar-btn-hover);
+  color: var(--color-toolbar-text);
+  border-color: #555;
+}
+
+.toolbar-btn.icon.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent-hover);
+}
+
+.toolbar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-toolbar-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.toolbar-toggle:hover {
+  color: var(--color-toolbar-text);
+}
+
+.toolbar-toggle input {
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.toolbar-hint {
+  font-size: 10px;
+  color: var(--color-toolbar-hint);
+  white-space: nowrap;
+}
+
+.toolbar-theme-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--color-toolbar-secondary);
+  font-size: 15px;
+  padding: 3px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.toolbar-theme-btn:hover {
+  background: var(--bg-toolbar-btn-hover);
+  color: var(--color-toolbar-text);
+  border-color: #555;
+}

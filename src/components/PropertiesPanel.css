@@ -1,0 +1,142 @@
+.props-panel {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.props-empty {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+.props-empty p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.props-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-section);
+}
+
+.props-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.props-field label {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.props-row {
+  display: flex;
+  gap: 8px;
+}
+
+.props-input-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.props-input {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  font-size: 12px;
+  background: var(--bg-input);
+  color: var(--color-input);
+  box-sizing: border-box;
+}
+
+.props-input:focus {
+  outline: none;
+  border-color: #2196F3;
+}
+
+.props-unit {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.props-hint {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.props-slider {
+  width: 100%;
+  margin-top: 2px;
+  accent-color: var(--color-accent);
+}
+
+.props-color {
+  width: 32px;
+  height: 24px;
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 1px;
+  cursor: pointer;
+  background: var(--bg-input);
+}
+
+.props-colorlabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-family: monospace;
+}
+
+.props-stats {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.props-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.props-stat strong {
+  color: var(--color-text-strong);
+  font-weight: 600;
+}
+
+.props-delete {
+  margin-top: 4px;
+  padding: 7px;
+  background: var(--bg-delete);
+  border: 1px solid var(--border-delete);
+  border-radius: 6px;
+  color: var(--color-delete);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.props-delete:hover {
+  background: var(--bg-delete-hover);
+  border-color: var(--color-delete);
+}

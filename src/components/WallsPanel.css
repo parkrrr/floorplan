@@ -1,0 +1,55 @@
+.wtools-panel {
+  padding: 8px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wtools-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-section);
+}
+
+.wtools-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wtools-btn {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--border-panel-btn);
+  border-radius: 5px;
+  background: var(--bg-panel-btn);
+  color: var(--color-panel-btn);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+}
+
+.wtools-btn:hover {
+  background: var(--bg-panel-btn-hover);
+  border-color: var(--border-panel-btn-hover);
+  color: var(--color-text);
+}
+
+.wtools-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent-hover);
+  color: white;
+  font-weight: 600;
+}
+
+.wtools-hint {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}

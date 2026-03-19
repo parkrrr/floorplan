@@ -1,0 +1,177 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── Light mode (default) ─────────────────────────────── */
+:root {
+  /* Canvas */
+  --bg-canvas: #e8e4de;
+  --grid-minor: #d0cbc4;
+  --grid-major: #b8b0a8;
+
+  /* App shell */
+  --bg-app: #e8e4de;
+  --bg-sidebar: #faf7f3;
+  --border-sidebar: #ddd6cc;
+
+  /* Toolbar */
+  --bg-toolbar: #2d2a26;
+  --bg-toolbar-group: #1a1714;
+  --border-toolbar: #1a1714;
+  --bg-toolbar-btn: #3d3830;
+  --bg-toolbar-btn-hover: #4d4840;
+  --color-toolbar-brand: #d4c4a8;
+  --color-toolbar-text: #d4c4a8;
+  --color-toolbar-secondary: #b0a090;
+  --color-toolbar-hint: #6a5a4a;
+
+  /* Text */
+  --color-text: #333;
+  --color-text-secondary: #888;
+  --color-text-muted: #aaa;
+  --color-text-strong: #444;
+
+  /* Panel cards */
+  --bg-card: #f7f3ee;
+  --border-section: #e5e0d8;
+
+  /* Panel buttons */
+  --bg-panel-btn: #ffffff;
+  --border-panel-btn: #ddd;
+  --color-panel-btn: #555;
+  --bg-panel-btn-hover: #f0ece6;
+  --border-panel-btn-hover: #bbb;
+
+  /* Palette */
+  --bg-palette-item-hover: #ede8e0;
+  --bg-palette-cat-hover: #f0ece6;
+  --bg-palette-active: #ddeeff;
+  --color-palette-active: #1a6aa8;
+
+  /* Inputs */
+  --bg-input: #ffffff;
+  --border-input: #ddd;
+  --color-input: #333;
+
+  /* Accent */
+  --color-accent: #4a7fa8;
+  --color-accent-hover: #5a8fb8;
+
+  /* Delete */
+  --bg-delete: #fff0f0;
+  --border-delete: #ffb0b0;
+  --color-delete: #cc3333;
+  --bg-delete-hover: #ffe0e0;
+
+  /* Error */
+  --bg-error: #fff0f0;
+  --border-error: #ffb0b0;
+  --color-error: #cc3333;
+
+  /* Empty state */
+  --color-empty-heading: #555;
+  --color-empty-text: #aaa;
+
+  /* Floor plan SVG */
+  --room-finished: #f7f3ee;
+  --room-inaccessible: #e8e0d8;
+  --wall-color: #6b5d4f;
+  --door-fill: #f7f3ee;
+  --window-fill: #f7f3ee;
+}
+
+/* ── Dark mode ─────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-canvas: #1c1c1c;
+  --grid-minor: #272727;
+  --grid-major: #323232;
+
+  --bg-app: #1c1c1c;
+  --bg-sidebar: #232323;
+  --border-sidebar: #333;
+
+  --bg-toolbar: #161412;
+  --bg-toolbar-group: #0e0d0b;
+  --border-toolbar: #0e0d0b;
+  --bg-toolbar-btn: #282420;
+  --bg-toolbar-btn-hover: #383430;
+  --color-toolbar-hint: #4a3a2a;
+
+  --color-text: #d0ccc6;
+  --color-text-secondary: #777;
+  --color-text-muted: #555;
+  --color-text-strong: #aaa;
+
+  --bg-card: #2a2520;
+  --border-section: #38322c;
+
+  --bg-panel-btn: #2a2520;
+  --border-panel-btn: #444;
+  --color-panel-btn: #9a8a7a;
+  --bg-panel-btn-hover: #38322c;
+  --border-panel-btn-hover: #555;
+
+  --bg-palette-item-hover: #2a2520;
+  --bg-palette-cat-hover: #232323;
+  --bg-palette-active: #1a3050;
+  --color-palette-active: #6ab0e8;
+
+  --bg-input: #2a2520;
+  --border-input: #444;
+  --color-input: #d0ccc6;
+
+  --bg-delete: #2a1515;
+  --border-delete: #6a3030;
+  --color-delete: #f07070;
+  --bg-delete-hover: #3a1a1a;
+
+  --bg-error: #2a1515;
+  --border-error: #6a3030;
+  --color-error: #f07070;
+
+  --color-empty-heading: #aaa;
+  --color-empty-text: #555;
+
+  --room-finished: #2a2a2a;
+  --room-inaccessible: #222222;
+  --wall-color: #9a8a7a;
+  --door-fill: #2a2a2a;
+  --window-fill: #2a2a2a;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}

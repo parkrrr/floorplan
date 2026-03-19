@@ -103,6 +103,24 @@
   border-color: var(--color-accent-hover);
 }
 
+.toolbar-btn.icon.walls:hover:not(:disabled) {
+  color: #c2410c;
+  border-color: #c2410c;
+  background: #fff7ed;
+}
+
+[data-theme="dark"] .toolbar-btn.icon.walls:hover:not(:disabled) {
+  color: #fb923c;
+  border-color: #fb923c;
+  background: #431407;
+}
+
+.toolbar-btn.icon.walls.active {
+  background: #ea580c;
+  border-color: #c2410c;
+  color: white;
+}
+
 .toolbar-toggle {
   display: flex;
   align-items: center;

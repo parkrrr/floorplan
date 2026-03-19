@@ -76,7 +76,7 @@ export default function Toolbar({
               + Place
             </button>
             <button
-              className={`toolbar-btn icon ${editWalls ? 'active' : ''}`}
+              className={`toolbar-btn icon walls ${editWalls ? 'active' : ''}`}
               onClick={onEditWallsToggle}
               title="Toggle wall editing mode"
             >

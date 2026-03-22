@@ -35,7 +35,7 @@ function DimensionLabel({ x, y, text, above = true }) {
   );
 }
 
-function FurnitureItem({ item, selected, zoom, unit, onSelect, onStartMove, onStartResize }) {
+function FurnitureItem({ item, selected, zoom, unit, tool, onSelect, onStartMove, onStartResize }) {
   const px = ftToPx(item.x);
   const py = ftToPx(item.y);
   const pw = ftToPx(item.width);
@@ -43,6 +43,7 @@ function FurnitureItem({ item, selected, zoom, unit, onSelect, onStartMove, onSt
 
   const handleItemMouseDown = (e) => {
     if (e.button !== 0) return;
+    if (tool === 'pan') return;
     e.stopPropagation();
     onSelect(item.id);
     onStartMove(item.id, e);
@@ -126,6 +127,7 @@ export default function FurnitureLayer({
   furniture,
   selectedId,
   zoom,
+  tool,
   onSelect,
   onUpdateItem,
   onBeginDrag,
@@ -219,6 +221,7 @@ export default function FurnitureLayer({
           selected={item.id === selectedId}
           zoom={zoom}
           unit={unit}
+          tool={tool}
           onSelect={onSelect}
           onStartMove={startMove}
           onStartResize={startResize}

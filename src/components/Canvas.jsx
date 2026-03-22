@@ -339,6 +339,7 @@ export default function Canvas({
           furniture={furniture}
           selectedId={selectedId}
           zoom={zoom}
+          tool={tool}
           onSelect={onSelectFurniture}
           onUpdateItem={onUpdateFurniture}
           onBeginDrag={onBeginDrag}

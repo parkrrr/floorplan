@@ -1,7 +1,7 @@
 import './PropertiesPanel.css';
 import { formatFeet } from '../utils/transform';
 
-export default function PropertiesPanel({ item, onUpdate, onDelete }) {
+export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder }) {
   if (!item) {
     return (
       <div className="props-panel props-empty">
@@ -122,6 +122,18 @@ export default function PropertiesPanel({ item, onUpdate, onDelete }) {
         <div className="props-stat">
           <span>Position</span>
           <strong>{formatFeet(item.x)}, {formatFeet(item.y)}</strong>
+        </div>
+      </div>
+
+      <div className="props-field">
+        <label>Layer order</label>
+        <div className="props-order-row">
+          <button className="props-order-btn" onClick={() => onReorder(item.id, 'back')} title="Send to Back">
+            ↙ Back
+          </button>
+          <button className="props-order-btn" onClick={() => onReorder(item.id, 'front')} title="Bring to Front">
+            ↗ Front
+          </button>
         </div>
       </div>
 

@@ -180,6 +180,15 @@ export default function App() {
     setSelectedId(null);
   }, [history, walls, furniture]);
 
+  const handleReorderFurniture = useCallback((id, direction) => {
+    const idx = furniture.findIndex(f => f.id === id);
+    if (idx === -1) return;
+    const next = furniture.filter(f => f.id !== id);
+    if (direction === 'front') next.push(furniture[idx]);
+    else next.unshift(furniture[idx]);
+    history.record({ walls, furniture: next });
+  }, [history, walls, furniture]);
+
   const handleDragWallEndpoint = useCallback((wallId, endpointIdx, newMx, newMy) => {
     const newWalls = walls.map(wall => {
       if (wall.id !== wallId) return wall;
@@ -512,6 +521,7 @@ export default function App() {
                 item={selectedItem}
                 onUpdate={handleUpdateFurniture}
                 onDelete={handleDeleteFurniture}
+                onReorder={handleReorderFurniture}
               />
             )}
           </div>

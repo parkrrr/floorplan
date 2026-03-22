@@ -25,6 +25,15 @@ function parseFloorPlan(json) {
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [unit, setUnit] = useState(() => localStorage.getItem('unit') === 'in' ? 'in' : 'ft');
+
+  const handleUnitToggle = useCallback(() => {
+    setUnit(u => {
+      const next = u === 'ft' ? 'in' : 'ft';
+      localStorage.setItem('unit', next);
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
@@ -414,6 +423,8 @@ export default function App() {
         onRedo={history.redo}
         darkMode={darkMode}
         onDarkModeToggle={() => setDarkMode(d => !d)}
+        unit={unit}
+        onUnitToggle={handleUnitToggle}
       />
 
       <div className="app-body">
@@ -471,6 +482,7 @@ export default function App() {
               onAddWallChild={handleAddWallChild}
               selectedWallId={selectedWallId}
               onSelectWall={handleSelectWall}
+              unit={unit}
             />
           )}
         </div>
@@ -522,6 +534,7 @@ export default function App() {
                 onUpdate={handleUpdateFurniture}
                 onDelete={handleDeleteFurniture}
                 onReorder={handleReorderFurniture}
+                unit={unit}
               />
             )}
           </div>

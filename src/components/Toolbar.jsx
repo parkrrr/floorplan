@@ -16,6 +16,8 @@ export default function Toolbar({
   onRedo,
   darkMode,
   onDarkModeToggle,
+  unit,
+  onUnitToggle,
 }) {
   return (
     <div className="toolbar">
@@ -96,6 +98,15 @@ export default function Toolbar({
             />
             Snap
           </label>
+        )}
+        {floorLoaded && (
+          <button
+            className="toolbar-btn icon"
+            onClick={onUnitToggle}
+            title="Toggle between feet and inches"
+          >
+            {unit === 'ft' ? "ft → in" : "in → ft"}
+          </button>
         )}
         <div className="toolbar-hint">
           Scroll: zoom · Space+drag or middle mouse: pan

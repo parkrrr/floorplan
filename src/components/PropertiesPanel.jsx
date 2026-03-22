@@ -1,7 +1,7 @@
 import './PropertiesPanel.css';
-import { formatFeet } from '../utils/transform';
+import { formatDimension } from '../utils/transform';
 
-export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder }) {
+export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder, unit = 'ft' }) {
   if (!item) {
     return (
       <div className="props-panel props-empty">
@@ -11,8 +11,9 @@ export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder })
   }
 
   const handleChange = (field) => (e) => {
-    const val = parseFloat(e.target.value);
+    let val = parseFloat(e.target.value);
     if (!isNaN(val) && val > 0) {
+      if (unit === 'in') val = val / 12;
       onUpdate(item.id, { [field]: val });
     }
   };
@@ -49,30 +50,30 @@ export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder })
           <div className="props-input-group">
             <input
               type="number"
-              value={Math.round(item.width * 12) / 12}
-              min={0.5}
-              step={0.25}
+              value={unit === 'in' ? Math.round(item.width * 12) : Math.round(item.width * 12) / 12}
+              min={unit === 'in' ? 6 : 0.5}
+              step={unit === 'in' ? 3 : 0.25}
               onChange={handleChange('width')}
               className="props-input"
             />
-            <span className="props-unit">ft</span>
+            <span className="props-unit">{unit}</span>
           </div>
-          <span className="props-hint">{formatFeet(item.width)}</span>
+          <span className="props-hint">{formatDimension(item.width, unit)}</span>
         </div>
         <div className="props-field">
           <label>Depth</label>
           <div className="props-input-group">
             <input
               type="number"
-              value={Math.round(item.height * 12) / 12}
-              min={0.5}
-              step={0.25}
+              value={unit === 'in' ? Math.round(item.height * 12) : Math.round(item.height * 12) / 12}
+              min={unit === 'in' ? 6 : 0.5}
+              step={unit === 'in' ? 3 : 0.25}
               onChange={handleChange('height')}
               className="props-input"
             />
-            <span className="props-unit">ft</span>
+            <span className="props-unit">{unit}</span>
           </div>
-          <span className="props-hint">{formatFeet(item.height)}</span>
+          <span className="props-hint">{formatDimension(item.height, unit)}</span>
         </div>
       </div>
 
@@ -121,7 +122,7 @@ export default function PropertiesPanel({ item, onUpdate, onDelete, onReorder })
         </div>
         <div className="props-stat">
           <span>Position</span>
-          <strong>{formatFeet(item.x)}, {formatFeet(item.y)}</strong>
+          <strong>{formatDimension(item.x, unit)}, {formatDimension(item.y, unit)}</strong>
         </div>
       </div>
 

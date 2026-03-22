@@ -61,6 +61,7 @@ export default function Canvas({
   onAddWallChild,
   selectedWallId,
   onSelectWall,
+  unit = 'ft',
 }) {
   const svgRef = useRef(null);
   const { zoom, pan, fitToRect, handleMouseDown, handleMouseMove, handleMouseUp, handleWheel, handleKeyDown, handleKeyUp } = usePanZoom(1);
@@ -342,6 +343,7 @@ export default function Canvas({
           onUpdateItem={onUpdateFurniture}
           onBeginDrag={onBeginDrag}
           onEndDrag={onEndDrag}
+          unit={unit}
         />
 
         {tool === 'place' && (

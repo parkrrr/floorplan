@@ -60,3 +60,9 @@ export function formatFeet(ft) {
   if (inches === 0) return `${feet}'`;
   return `${feet}' ${inches}"`;
 }
+
+// Format a foot value according to the active unit ('ft' or 'in')
+export function formatDimension(ft, unit) {
+  if (unit === 'in') return `${Math.round(ft * 12)}"`;
+  return formatFeet(ft);
+}

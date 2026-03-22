@@ -1,5 +1,5 @@
 import { useRef, useCallback } from 'react';
-import { ftToPx, pxToFt, formatFeet } from '../utils/transform';
+import { ftToPx, pxToFt, formatDimension } from '../utils/transform';
 
 const HANDLE_SIZE = 6; // resize handle size in unzoomed px
 const MIN_SIZE_FT = 0.5;
@@ -35,7 +35,7 @@ function DimensionLabel({ x, y, text, above = true }) {
   );
 }
 
-function FurnitureItem({ item, selected, zoom, onSelect, onStartMove, onStartResize }) {
+function FurnitureItem({ item, selected, zoom, unit, onSelect, onStartMove, onStartResize }) {
   const px = ftToPx(item.x);
   const py = ftToPx(item.y);
   const pw = ftToPx(item.width);
@@ -94,7 +94,7 @@ function FurnitureItem({ item, selected, zoom, onSelect, onStartMove, onStartRes
       {selected && (
         <>
           {/* Dimensions */}
-          <DimensionLabel x={px} y={py - ph / 2} text={formatFeet(item.width)} above={true} />
+          <DimensionLabel x={px} y={py - ph / 2} text={formatDimension(item.width, unit)} above={true} />
           <text
             x={px + pw / 2 + 4}
             y={py}
@@ -104,7 +104,7 @@ function FurnitureItem({ item, selected, zoom, onSelect, onStartMove, onStartRes
             fill="#333"
             style={{ userSelect: 'none', pointerEvents: 'none' }}
           >
-            {formatFeet(item.height)}
+            {formatDimension(item.height, unit)}
           </text>
           {/* Resize handles */}
           {handles.map(h => (
@@ -130,6 +130,7 @@ export default function FurnitureLayer({
   onUpdateItem,
   onBeginDrag,
   onEndDrag,
+  unit = 'ft',
 }) {
   const dragRef = useRef(null);
 
@@ -217,6 +218,7 @@ export default function FurnitureLayer({
           item={item}
           selected={item.id === selectedId}
           zoom={zoom}
+          unit={unit}
           onSelect={onSelect}
           onStartMove={startMove}
           onStartResize={startResize}

@@ -5,7 +5,7 @@ A browser-based floor plan designer built with React, Vite, and SVG.
 ## Features
 
 ### Floor Plan Import / Export
-- Import a floor plan JSON (coordinates in meters) to populate rooms, walls, doors, and windows
+- Start from an empty canvas or import a floor plan JSON (coordinates in meters)
 - Export an enhanced JSON that preserves all edits — re-importable without data loss
 
 ### Furniture
@@ -13,7 +13,9 @@ A browser-based floor plan designer built with React, Vite, and SVG.
 - Drag to move, drag corners to resize, rotate via Properties panel slider
 - Nudge selected item 1 inch at a time with arrow keys
 - Delete selected item with Delete / Backspace
+- Bring to front / send to back z-order controls
 - Properties panel shows label, dimensions, rotation, color, area, and position
+- Toggle dimension display between decimal feet and ft/in
 
 ### Walls Mode
 - Draw new walls (click to place, snaps to nearby endpoints)

@@ -56,6 +56,7 @@ export function usePanZoom(initialZoom = 1, initialPan = { x: 0, y: 0 }) {
 
   const handleKeyDown = useCallback((e) => {
     if (e.code === 'Space' && !e.repeat) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
       spaceDownRef.current = true;
       e.preventDefault();
     }

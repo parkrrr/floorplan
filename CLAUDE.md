@@ -2,7 +2,7 @@
 
 ## What this project is
 
-A frontend-only React + Vite + SVG floor plan designer. No backend. Users import a floor plan JSON, edit rooms/walls/doors/windows and place furniture, then export an enhanced JSON.
+A frontend-only React + Vite + SVG floor plan designer. No backend. Users start from an empty canvas or import a floor plan JSON, edit rooms/walls/doors/windows and place furniture, then export an enhanced JSON.
 
 ## Tech stack
 
@@ -14,7 +14,9 @@ A frontend-only React + Vite + SVG floor plan designer. No backend. Users import
 
 - All state lives in `src/App.jsx` — walls, furniture, history, mode, selection, pan/zoom
 - Coordinate system: JSON uses meters, Y-down (screen coords, no Y-flip). Display converts to feet (`M_TO_FT = 3.28084`, `PX_PER_FT = 10`)
-- Two modes toggled from toolbar: **Furniture mode** (default) and **Walls mode**
+- Dimension display toggles between decimal feet and ft/in (state: `useFtIn`, toggled in toolbar)
+- Two modes toggled from toolbar: **Furniture mode** (default) and **Walls mode** (styled orange to distinguish it)
+- Furniture z-order (bring to front / send to back) is controlled via the Properties panel; order is determined by array position in `furniture` state
 - Undo/redo via `useHistory` hook — `record()` for discrete actions, `beginDrag()`/`endDrag()` collapse drag sequences to one entry
 - Module-level ID counters (`nextId`, `nextWallId`, `nextChildId`) must be bumped on import to avoid collisions
 

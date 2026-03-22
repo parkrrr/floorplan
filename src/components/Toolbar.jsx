@@ -71,13 +71,6 @@ export default function Toolbar({
               ✥ Pan
             </button>
             <button
-              className={`toolbar-btn icon ${tool === 'place' ? 'active' : ''}`}
-              onClick={() => onToolChange('place')}
-              title="Place furniture (choose from palette)"
-            >
-              + Place
-            </button>
-            <button
               className={`toolbar-btn icon walls ${editWalls ? 'active' : ''}`}
               onClick={onEditWallsToggle}
               title="Toggle wall editing mode"
